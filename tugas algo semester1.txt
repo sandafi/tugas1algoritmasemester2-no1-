@@ -1,0 +1,91 @@
+tugas algoritma pemograman
+// sanda fiona-227064516091
+	
+	//no(1)
+	
+	/*NAMA : SANDA FIONA
+	  NPM  : 227064516091 */
+	package javaapplication23;
+	import java.util.Scanner;   //untuk proses class ke dalam kode program
+	public class JavaApplication23 {
+		public static void main(String[] args) {
+       
+        int i;
+        float jumlah=0;     //mendeklarasi variabel jumlah bertipe float untuk menyimpan nilai jumlah, 0 adalah titik awal untuk "jumlah"
+        
+        Scanner input = new Scanner (System.in);    //proses intansiasi scanner class ke dalam variabel input
+
+        System.out.print("berapa masukan nilai mahasiswa = ");  //untuk menginput untuk berapa masukan data mahasiswa
+        int n = input.nextInt();
+        input.nextLine();
+        //untuk membuat array kosong
+        String[] nama=new String[n];        // string: tipe data referansi yang dibangun dari susunan karakter
+        int[] nilai= new int[n];            // int: tipe data referansi yang dibangun dari susunan bilangan bulat 
+
+        for (i=0;i<n;i++){                  //kondisi perulangan akan dimulai dari 0 dan akan berhenti sesuai angka yang ada divariabel n
+           // System.out.print= untuk mencetak apapun masukan sebagai argumen(print=menectak kekanan atau samping)"masukan nama mahasiswa = "
+            System.out.print("masukan nama mahasiswa  = "); //agar kalimat "masukan nama mahasiswa =" menjadi output dan tampit pada console 
+            nama[i]=input.next();       //method yang dipakai berguna untuk membaca nilai String dari user
+            // System.out.print= untuk mencetak apapun masukan sebagai argumen(print=menectak kekanan atau samping)"masukan nilai mahasiswa =  "
+            System.out.print("masukan nilai mahasiswa = "); //agar kalimat "masukan nilai mahasiswa =" menjadi output dan tampit pada console 
+            nilai[i]=input.nextInt();   //method yg dipakai adalah nextInt karena menggunakan integer atau membaca bilangan bulat
+            jumlah=jumlah+nilai[i];    //menghitung jumlah nilai seluruh mahasiswanya
+        }
+        float rata=(float) jumlah/i;    //menghitung nilai rata-rata mahasiswa menggunakan double karena untuk bilangan desimal
+        System.out.println("total nilai mahasiswa   = "+jumlah);  //untuk menampilkan outputan kalimat "total nilai mahasiswa=" dengan pemanggilan +jumlah
+        System.out.print("rata-rata nilai mahasiswa = "+rata);  //untuk menampilkan outputan kalimat "rata-rata nilai mahasiswa=" dengan pemanggilan +rata
+        
+        System.out.println("");
+        
+    }
+ }
+ 
+ //no(2)
+ 
+	 /*
+	 NAMA : SANDA FIONA
+	 NPM : 227064516091
+	 */
+	package javaapplication26;
+	import java.util.Scanner;   //untuk proses class ke dalam kode program
+	public class JavaApplication26 {
+		 public static void main(String[] args) {
+     
+		int total=0; //mendeklarasi variabel total bertipe integer untuk menyimpan nilai total, 0 adalah titik awal untuk "total"
+		Scanner input = new Scanner(System.in);     //proses intansiasi scanner class ke dalam variabel input
+		
+		System.out.println("---    MASUKAN DATA     ---");        
+		System.out.print("MASUKAN JUMLAH DATA MAHASISWA : ");  //menginput berapa jumlah mahasiswa
+		int masukan = input.nextInt();                        // berarti variabel masukan masukan bertipe integer
+		 //untuk membuat array kosong
+		String []nama = new String[masukan];   // string: tipe data referansi yang dibangun dari susunan karakter
+		int[][] nil =new int[masukan][2];      //[masukan][2] adalah untuk mengambil data dari array
+
+		for( int i = 0; i < nil.length; i++ ){
+			System.out.println("Mahasiswa Ke "+(i+1)+" : "); // System.out.println=untuk mencetak apapun masukan sebagai argumen(println=mencetak kebawah)"mahasiswa ke :"
+			System.out.print("Nama = ");               // System.out.print= untuk mencetak apapun masukan sebagai argumen(print=menectak kekanan atau samping)"Nama"
+			nama[i] = input.next();
+			
+			for (int kolom=0; kolom<2; kolom++){             //kondisi perulangan akan dimulai dari 0 dan akan berhenti jika kolom<2
+				if (kolom==0)                               // apabila kolom 0 maka akan tercetak "UTS ="
+					System.out.print("UTS = ");
+				else if (kolom==1)                          // sedangkan apabila kolom 1 maka akan tercetak 'UAS ="
+					System.out.print("UAS = ");
+				
+			System.out.print("");
+			nil[i][kolom]=input.nextInt();
+			}
+		}
+		System.out.println("NO\tNAMA\tUTS\tUAS\ttotal\trata-rata");
+		System.out.println("=======================================================");
+			 for (int i=0; i<masukan;i++) {
+				//menghitung total nilai uts dan uas per mahasiswanya
+				total=nil[i][0]+nil[i][1];   
+				//menghitung nilai rata-rata mahasiswa menggunakan double karena untuk bilangan desimal yang lebih besar dari float
+				double rata=(double) total/2;
+				System.out.println((i+1)+"\t"+nama[i]+"\t"+nil[i][0]+"\t"+nil[i][1]+"\t"+total+"\t"+rata);
+			
+			 }
+			 //(i+1) dan i++ adalah operator aritmatika dan penugasan untuk meningkatkan atau menambah satu variabel  
+		}
+	}
